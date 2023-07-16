@@ -1,20 +1,8 @@
 import * as admin from 'firebase-admin';
+import * as _firestore from '@google-cloud/firestore';
+const serviceAccount = require("./firebaseInfo");
 
-
-export const DataBase = ({config}: any): admin.firestore.Firestore => {
-    const { 
-        apiKey, authDomain ,projectId, storageBucket, messagingSenderId, appId
-    } = config;
-
-    const serviceAccount = {
-        apiKey,
-        authDomain,
-        projectId,
-        storageBucket,
-        messagingSenderId,
-        appId
-    };
-
+export const DataBase = () => {
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
     });
@@ -22,3 +10,5 @@ export const DataBase = ({config}: any): admin.firestore.Firestore => {
     
   return admin.firestore()
 };
+
+export type dataBaseCollection = _firestore.Firestore

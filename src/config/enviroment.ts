@@ -6,5 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export const config = {
     PORT: process.env.PORT,
-    DB_URI: process.env.DB_URI,
+    projectId: process.env.projectId,
+    clientEmail: process.env.clientEmail,
+    private_key: process.env.privateKey,
 }

@@ -5,9 +5,9 @@ import compression from "compression";
 import bodyParser from "body-parser";
 
 // App Middleware
+import { NotFoundMiddleware } from '../api/middleware'
 
-
-export const routerApp = ({}) => {
+export const routerApp = ({ TaskRoutes }: any) => {
     const router = express.Router();
     const apiRouter = express.Router();
 
@@ -20,13 +20,13 @@ export const routerApp = ({}) => {
 
 
     // All Routes App
-
+    apiRouter.use('/tasks', TaskRoutes) 
 
     // Main Routes
     router.use("/v1/api", apiRouter)
 
     // Middleware
-
+    router.use(NotFoundMiddleware)
 
     return router;
 }
