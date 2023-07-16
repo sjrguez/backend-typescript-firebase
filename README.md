@@ -7,6 +7,8 @@
 3. Cambiar el archivo ```.env copy``` a ```.env``` y agregar los datos necesarios
 4. npm ```run start-dev``` para correr local
 
+### Para acceder a stackblitz.com
+ - [Link de la app](https://stackblitz.com/edit/stackblitz-starters-hs4mkb)
 
 ### Estructura del proyecto
 

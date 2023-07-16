@@ -1,10 +1,10 @@
 import * as admin from 'firebase-admin';
 import * as _firestore from '@google-cloud/firestore';
-const serviceAccount = require("./firebaseInfo");
+import * as serviceAccount from './firebaseInfo.json'
 
 export const DataBase = () => {
     admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
+        credential: admin.credential.cert(serviceAccount as any),
     });
     
     
